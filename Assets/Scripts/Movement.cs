@@ -10,13 +10,13 @@ namespace HTF{
         private SpriteRenderer _spriteRenderer;
         private Animator _animator;
         private float _horizontalMovement;
-        private bool _isFlipped = false;
         private bool _isGrounded = true;
         
         private static readonly int IsJumping = Animator.StringToHash("IsJumping");
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Kick1 = Animator.StringToHash("Kick");
         private static readonly int Head1 = Animator.StringToHash("Head");
+        private static readonly int Jump1 = Animator.StringToHash("Jump");
 
         [FormerlySerializedAs("type")]
         [Header("Player Properties")] 
@@ -25,8 +25,8 @@ namespace HTF{
         [SerializeField] private float speed = 200f;
         [SerializeField] private float jumpStrength = 10f;
         [SerializeField] private Transform groundCheck;
-        [SerializeField] private Transform groundArmCheck;
         [SerializeField] private LayerMask groundLayer;
+        [SerializeField] private GameObject[] partes = new GameObject[3];
 
         [Header("Kicking Properties")]
         [Space]
@@ -46,19 +46,19 @@ namespace HTF{
             if (Input.GetKey(KeyCode.A)){
                 _horizontalMovement = -1f;
                 _spriteRenderer.flipX = false;
-
             }else if (Input.GetKey(KeyCode.D)){
                 _horizontalMovement = 1f;
                 _spriteRenderer.flipX = true;
-
             }else{
                 _horizontalMovement = 0f;
             }
+
             MovePlayer();
-            if (_isGrounded && Input.GetKeyDown(KeyCode.W))
+
+            if (CheckGrounded() && Input.GetKeyDown(KeyCode.W))
                 JumpPlayer();
 
-            if (_isGrounded && Input.GetKeyDown(KeyCode.E))
+            if (CheckGrounded() && Input.GetKeyDown(KeyCode.E))
                 Kick();
 
             if (Input.GetKeyDown(KeyCode.S))
@@ -67,14 +67,17 @@ namespace HTF{
 
         // Movimentação do Visitante
         private void Visitante(){
-            if (Input.GetKey(KeyCode.J))
+            if (Input.GetKey(KeyCode.J)){
                 _horizontalMovement = -1f;
-
-            else if (Input.GetKey(KeyCode.L))
+                _spriteRenderer.flipX = true;
+            }else if (Input.GetKey(KeyCode.L)){
                 _horizontalMovement = 1f;
-
-            else
+                _spriteRenderer.flipX = false;
+            }else{
                 _horizontalMovement = 0f;
+            }
+            
+            MovePlayer();
             
             if (_isGrounded && Input.GetKeyDown(KeyCode.I))
                 JumpPlayer();
@@ -89,10 +92,12 @@ namespace HTF{
         // Verifica se está no chão
         private bool CheckGrounded(){
             Collider2D[] collisionsFeet = Physics2D.OverlapCircleAll(groundCheck.position, 0.25f, groundLayer);
-            bool feetCheck = collisionsFeet.Any(collision => !collision.gameObject.Equals(gameObject));
-            Collider2D[] collisionsArms = Physics2D.OverlapCircleAll(groundArmCheck.position, 0.5f, groundLayer);
-            bool armCheck = collisionsArms.Any(collision => !collision.gameObject.Equals(gameObject));
-            return (feetCheck || armCheck);
+
+            bool feetCheck = false; 
+            foreach(GameObject oo in partes){
+                feetCheck = collisionsFeet.Any(collision => !collision.gameObject.Equals(oo)) || feetCheck;
+            }
+            return feetCheck;
         }
 
         // Movimenta o jogador
@@ -103,6 +108,7 @@ namespace HTF{
         
         // Responsável pelo pulo do jogador
         private void JumpPlayer(){
+            _animator.SetTrigger(Jump1);
             _rigidbody.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
             // PlayJumpSound();
         }
@@ -119,12 +125,10 @@ namespace HTF{
             }
         }
 
-        private void Update (){
-            _isGrounded = CheckGrounded();
-            
+        private void Update (){            
+            _isGrounded = CheckGrounded();            
             _animator.SetBool(IsJumping, !_isGrounded);
             _animator.SetFloat(Speed, Mathf.Abs(_rigidbody.velocity.x));
-                
             switch (playerType){
                 case PlayerType.Mandante:
                     Mandante();
