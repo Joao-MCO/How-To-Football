@@ -853,11 +853,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.005
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 0c061e4eb89a68c4cbbeee7674613e2b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -938,7 +938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406865152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.04, y: 4.19, z: 0}
+  m_LocalPosition: {x: -2.6, y: 1.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1104,7 +1104,6 @@ GameObject:
   - component: {fileID: 1974442829}
   - component: {fileID: 1974442836}
   - component: {fileID: 1974442839}
-  - component: {fileID: 1974442840}
   m_Layer: 8
   m_Name: Mandante
   m_TagString: Player
@@ -1173,7 +1172,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2c81ea649c50b9040805344f8e3f7445, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -1239,46 +1238,8 @@ MonoBehaviour:
   playerType: 0
   speed: 200
   jumpStrength: 10
-  groundCheck: {fileID: 2088780275}
-  groundArmCheck: {fileID: 1208287456}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 576
-  partes:
-  - {fileID: 262765990}
-  - {fileID: 1208287455}
-  - {fileID: 2088780274}
-  kickPoint: {fileID: 2088780275}
-  kickStrength: 100
-  ballLayer:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!61 &1974442840
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974442824}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 13.09, y: 28.012873}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 13.09, y: 28.012873}
-  m_EdgeRadius: 0
+  kickStrength: 15
+  pe: {fileID: 2088780277}
 --- !u!1 &2088780274
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088780275}
   - component: {fileID: 2088780276}
+  - component: {fileID: 2088780277}
   m_Layer: 8
   m_Name: Pe
   m_TagString: Player
@@ -1324,7 +1286,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.097718716, y: -11.44944}
+  m_Offset: {x: -0.13656425, y: -11.335181}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1335,5 +1297,17 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.143649, y: 5.311508}
+  m_Size: {x: 9.998257, y: 5.0829906}
   m_EdgeRadius: 0
+--- !u!114 &2088780277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088780274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58a51a01ca7d5a46ad36c49b6247fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

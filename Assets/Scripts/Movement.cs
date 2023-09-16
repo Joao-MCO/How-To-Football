@@ -24,15 +24,11 @@ namespace HTF{
         [SerializeField] private PlayerType playerType;
         [SerializeField] private float speed = 200f;
         [SerializeField] private float jumpStrength = 10f;
-        [SerializeField] private Transform groundCheck;
-        [SerializeField] private LayerMask groundLayer;
-        [SerializeField] private GameObject[] partes = new GameObject[3];
 
         [Header("Kicking Properties")]
         [Space]
-        [SerializeField] private Transform kickPoint;
         [SerializeField] private float kickStrength = 15f;
-        [SerializeField] private LayerMask ballLayer;
+        [SerializeField] private Pe pe;
 
         // Setando componentes do Objeto
         private void Awake (){
@@ -55,10 +51,10 @@ namespace HTF{
 
             MovePlayer();
 
-            if (CheckGrounded() && Input.GetKeyDown(KeyCode.W))
+            if (_isGrounded && Input.GetKeyDown(KeyCode.W))
                 JumpPlayer();
 
-            if (CheckGrounded() && Input.GetKeyDown(KeyCode.E))
+            if (_isGrounded && Input.GetKeyDown(KeyCode.E))
                 Kick();
 
             if (Input.GetKeyDown(KeyCode.S))
@@ -89,17 +85,6 @@ namespace HTF{
                 Head();
         }
 
-        // Verifica se está no chão
-        private bool CheckGrounded(){
-            Collider2D[] collisionsFeet = Physics2D.OverlapCircleAll(groundCheck.position, 0.25f, groundLayer);
-
-            bool feetCheck = false; 
-            foreach(GameObject oo in partes){
-                feetCheck = collisionsFeet.Any(collision => !collision.gameObject.Equals(oo)) || feetCheck;
-            }
-            return feetCheck;
-        }
-
         // Movimenta o jogador
         private void MovePlayer (){
             Vector2 movement = new Vector2((_horizontalMovement * speed * Time.fixedDeltaTime),_rigidbody.velocity.y);
@@ -116,17 +101,17 @@ namespace HTF{
         // Responsável pelo chute do jogador
         private void Kick(){
             _animator.SetTrigger(Kick1);
-            Collider2D[] balls = Physics2D.OverlapCircleAll(kickPoint.position, 0.6f, ballLayer);
-            foreach (Collider2D ball in balls){  
-                if (ball.gameObject.TryGetComponent<Bola>(out var ballComponent)){
-                    // PlayKickSound();
-                    ballComponent.BallMove((ball.gameObject.transform.position - kickPoint.position), kickStrength);
+            if(pe.CanShoot()){
+                if(_spriteRenderer.flipX){
+                    pe.GetBola().AddForce(kickStrength*Vector2.right, ForceMode2D.Impulse);
+                }else{
+                    pe.GetBola().AddForce(kickStrength*Vector2.left, ForceMode2D.Impulse);
                 }
             }
         }
 
-        private void Update (){            
-            _isGrounded = CheckGrounded();            
+        private void Update (){     
+            _isGrounded = pe.CheckGround();              
             _animator.SetBool(IsJumping, !_isGrounded);
             _animator.SetFloat(Speed, Mathf.Abs(_rigidbody.velocity.x));
             switch (playerType){
