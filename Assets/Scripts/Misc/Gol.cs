@@ -10,7 +10,7 @@ namespace HTF{
                 return;
             
             if (col.gameObject.CompareTag("Bola")){
-                GameManager.Instance.OnScoreNoCallback?.Invoke(goalSide);
+                GameManager.Instance.Score(goalSide);
             }
         }
     }
