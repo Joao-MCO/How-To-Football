@@ -58,7 +58,7 @@ namespace HTF{
             OnGameReady?.Invoke();
         }
 
-        private void AddScore (MatchSide side){
+        public void AddScore (MatchSide side){
             gameIsOn = false;
             
             switch (side){

@@ -1,7 +1,5 @@
-using System.Numerics;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace HTF{
     public class Pe : MonoBehaviour
@@ -19,7 +17,7 @@ namespace HTF{
             }else if(other.gameObject.layer == 9){
                _bola = other.gameObject.GetComponent<Rigidbody2D>();
                _canShoot = true;
-               _direction = (transform.position - other.gameObject.transform.position).normalized;
+               _direction = -(transform.position - other.gameObject.transform.position).normalized;
             }
         }
 
@@ -38,6 +36,10 @@ namespace HTF{
 
         public bool CanShoot(){
             return _canShoot;
+        }
+
+        public Vector2 GetDirection(){
+            return _direction;
         }
     }
 }

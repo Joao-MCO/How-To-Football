@@ -41,10 +41,10 @@ namespace HTF{
         private void Mandante(){
             if (Input.GetKey(KeyCode.A)){
                 _horizontalMovement = -1f;
-                _spriteRenderer.flipX = false;
+                gameObject.transform.rotation = new Quaternion(0f,180f,0f,0f);
             }else if (Input.GetKey(KeyCode.D)){
                 _horizontalMovement = 1f;
-                _spriteRenderer.flipX = true;
+                gameObject.transform.rotation = new Quaternion(0f,0f,0f,0f);
             }else{
                 _horizontalMovement = 0f;
             }
@@ -65,10 +65,10 @@ namespace HTF{
         private void Visitante(){
             if (Input.GetKey(KeyCode.J)){
                 _horizontalMovement = -1f;
-                _spriteRenderer.flipX = true;
+                gameObject.transform.rotation = new Quaternion(0f,0f,0f,0f);
             }else if (Input.GetKey(KeyCode.L)){
                 _horizontalMovement = 1f;
-                _spriteRenderer.flipX = false;
+                gameObject.transform.rotation = new Quaternion(0f,180f,0f,0f);
             }else{
                 _horizontalMovement = 0f;
             }
@@ -102,11 +102,7 @@ namespace HTF{
         private void Kick(){
             _animator.SetTrigger(Kick1);
             if(pe.CanShoot()){
-                if(_spriteRenderer.flipX){
-                    pe.GetBola().AddForce(kickStrength*Vector2.right, ForceMode2D.Impulse);
-                }else{
-                    pe.GetBola().AddForce(kickStrength*Vector2.left, ForceMode2D.Impulse);
-                }
+                pe.GetBola().AddForce(kickStrength*pe.GetDirection(), ForceMode2D.Impulse);
             }
         }
 
