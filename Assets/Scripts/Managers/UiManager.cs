@@ -10,6 +10,10 @@ namespace HTF{
         public Image[] Mandante = new Image[6];
         public Image[] Visitante = new Image[6];
 
+        public GameObject placar;
+        public GameObject vencedor;
+        public GameObject brasil, argentina;
+
         private void Awake (){
             if (Instance == null){
                 Instance = this;
@@ -33,5 +37,11 @@ namespace HTF{
             }
         }
 
+        public void InTheEnd(string name){
+            placar.SetActive(false);
+            vencedor.SetActive(true);
+            if(GameManager.Instance.ScoreHome > GameManager.Instance.ScoreAway) brasil.SetActive(true);
+            else argentina.SetActive(true);
+        }
     }
 }

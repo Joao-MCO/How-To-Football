@@ -65,10 +65,10 @@ namespace HTF{
         private void Visitante(){
             if (Input.GetKey(KeyCode.J)){
                 _horizontalMovement = -1f;
-                gameObject.transform.rotation = new Quaternion(0f,0f,0f,0f);
-            }else if (Input.GetKey(KeyCode.L)){
-                _horizontalMovement = 1f;
                 gameObject.transform.rotation = new Quaternion(0f,180f,0f,0f);
+            }else if (Input.GetKey(KeyCode.L)){
+                gameObject.transform.rotation = new Quaternion(0f,0f,0f,0f);
+                _horizontalMovement = 1f;
             }else{
                 _horizontalMovement = 0f;
             }

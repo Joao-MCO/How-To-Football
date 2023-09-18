@@ -51,18 +51,17 @@ namespace HTF{
             gameIsOn = true;
         }
 
-        public void EndGame(){
-            if(ScoreHome == scoreLimit){
-                gameIsOn = false;
-            }else if(ScoreAway == scoreLimit){
-                gameIsOn = false;                
-            }else{
-                return;
-            }
+        public void EndGame(String nome){
+            gameIsOn = false;     
+            Destroy(bola);
+            Destroy(home);
+            Destroy(away);
+            UiManager.Instance.InTheEnd(nome);
         }
         private void Update() {
             UiManager.Instance.OnScore();
-            EndGame();
+            if(ScoreAway == scoreLimit) EndGame(awayTeam.teamName);
+            if (ScoreHome == scoreLimit) EndGame(homeTeam.teamName);
         }
 
         public void Restart(){
