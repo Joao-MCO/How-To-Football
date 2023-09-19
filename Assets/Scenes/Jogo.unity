@@ -582,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 1
   speed: 200
-  jumpStrength: 17
+  jumpStrength: 18
   kickStrength: 15
   pe: {fileID: 159473000}
 --- !u!50 &234298712
@@ -3628,7 +3628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerType: 0
   speed: 200
-  jumpStrength: 17
+  jumpStrength: 18
   kickStrength: 15
   pe: {fileID: 2088780277}
 --- !u!1 &1996303439

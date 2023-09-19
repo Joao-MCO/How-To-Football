@@ -101,9 +101,7 @@ namespace HTF{
         // Responsável pelo chute do jogador
         private void Kick(){
             _animator.SetTrigger(Kick1);
-            if(pe.CanShoot()){
-                pe.GetBola().AddForce(kickStrength*pe.GetDirection(), ForceMode2D.Impulse);
-            }
+            
         }
 
         private void Update (){     
