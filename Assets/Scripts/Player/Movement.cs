@@ -11,6 +11,9 @@ namespace HTF{
         private Animator _animator;
         private float _horizontalMovement;
         private bool _isGrounded = true;
+        public bool canShoot = false;
+        private Rigidbody2D _bola;
+        private Vector2 _direction;
         
         private static readonly int IsJumping = Animator.StringToHash("IsJumping");
         private static readonly int Speed = Animator.StringToHash("Speed");
@@ -101,7 +104,10 @@ namespace HTF{
         // Responsável pelo chute do jogador
         private void Kick(){
             _animator.SetTrigger(Kick1);
-            
+            if(canShoot){
+                _bola.AddForce(kickStrength*_direction, ForceMode2D.Impulse);
+            }  
+
         }
 
         private void Update (){     
@@ -122,6 +128,24 @@ namespace HTF{
 
         private void Head(){
             _animator.SetTrigger(Head1);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) {
+            if(other.gameObject.layer == 9){    
+                _bola = other.gameObject.GetComponent<Rigidbody2D>();
+                canShoot = true;
+            }
+        }
+
+        private void OnTriggerStay2D(Collider2D other) {
+            if(other.gameObject.layer == 9) _direction = -(transform.position - other.gameObject.transform.position).normalized; 
+        }
+        
+        private void OnTriggerExit2D(Collider2D other) {
+            if(other.gameObject.layer == 9){  
+                _bola = null; 
+                canShoot = false;
+            }
         }
     }
 }
