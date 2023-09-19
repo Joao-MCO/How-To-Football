@@ -32,6 +32,8 @@ namespace HTF{
         [Space]
         [SerializeField] private float kickStrength = 15f;
         [SerializeField] private Pe pe;
+        [SerializeField] private Cabeca cabeca;
+
 
         // Setando componentes do Objeto
         private void Awake (){
@@ -128,6 +130,7 @@ namespace HTF{
 
         private void Head(){
             _animator.SetTrigger(Head1);
+            cabeca.OnHead();
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
