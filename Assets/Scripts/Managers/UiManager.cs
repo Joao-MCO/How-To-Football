@@ -13,6 +13,7 @@ namespace HTF{
         public GameObject placar;
         public GameObject vencedor;
         public GameObject brasil, argentina;
+        public GameObject pause;
 
         private void Awake (){
             if (Instance == null){

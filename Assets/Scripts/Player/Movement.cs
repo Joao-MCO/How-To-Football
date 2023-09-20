@@ -7,11 +7,10 @@ namespace HTF{
     public class Movement : MonoBehaviour 
     {
         private Rigidbody2D _rigidbody;
-        private SpriteRenderer _spriteRenderer;
         private Animator _animator;
         private float _horizontalMovement;
-        private bool _isGrounded = true;
-        public bool canShoot = false;
+        public bool _isGrounded = true;
+        private bool canShoot = false;
         private Rigidbody2D _bola;
         private Vector2 _direction;
         
@@ -38,7 +37,6 @@ namespace HTF{
         // Setando componentes do Objeto
         private void Awake (){
             _rigidbody = GetComponent<Rigidbody2D>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
             _animator = GetComponent<Animator>();
         }
 
@@ -59,7 +57,7 @@ namespace HTF{
             if (_isGrounded && Input.GetKeyDown(KeyCode.W))
                 JumpPlayer();
 
-            if (_isGrounded && Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
                 Kick();
 
             if (Input.GetKeyDown(KeyCode.S))
@@ -116,15 +114,17 @@ namespace HTF{
             _isGrounded = pe.CheckGround();              
             _animator.SetBool(IsJumping, !_isGrounded);
             _animator.SetFloat(Speed, Mathf.Abs(_rigidbody.velocity.x));
-            switch (playerType){
-                case PlayerType.Mandante:
-                    Mandante();
-                    break;
-                case PlayerType.Visitante:
-                    Visitante();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
+            if(GameManager.Instance.gameIsOn){
+                switch (playerType){
+                    case PlayerType.Mandante:
+                        Mandante();
+                        break;
+                    case PlayerType.Visitante:
+                        Visitante();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
 

@@ -13,5 +13,11 @@ namespace HTF{
                 _isColliding = true;
             }
         }
+
+        private void OnCollisionExit2D(Collision2D other) {
+            if(other.gameObject.layer == 6){
+                _isColliding = false;
+            }
+        }
     }
 }

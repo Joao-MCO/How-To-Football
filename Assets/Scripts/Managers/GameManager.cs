@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+using System.Collections;
 using System.Timers;
 using System.Threading;
 using System;
@@ -28,6 +30,10 @@ namespace HTF{
         [SerializeField] private GameObject home;
         [SerializeField] private GameObject away;
 
+        [Header("UI Objects")] 
+        [Space] 
+        [SerializeField] private GameObject gol;
+        
         
         private void Awake (){
             if (Instance == null){
@@ -40,15 +46,12 @@ namespace HTF{
         }
 
         public void Score(MatchSide ms){
-            Restart();
-            gameIsOn = false;
-            float ini = 0;
             if(ms == MatchSide.Away){
                 ScoreHome += 1;
             }else{
                 ScoreAway += 1;
             }
-            gameIsOn = true;
+            StartCoroutine(Gol());
         }
 
         public void EndGame(String nome){
@@ -62,12 +65,35 @@ namespace HTF{
             UiManager.Instance.OnScore();
             if(ScoreAway == scoreLimit) EndGame(awayTeam.teamName);
             if (ScoreHome == scoreLimit) EndGame(homeTeam.teamName);
+            if(Input.GetKeyUp(KeyCode.Escape)){
+                if(gameIsOn){
+                    Botoes.Instance.Pause();
+                    gameIsOn = false;
+                }else{
+                    Botoes.Instance.UnPause();
+                    gameIsOn = true;
+                }
+            }
         }
 
         public void Restart(){
             bola.transform.position = new Vector2(0f, 3f);
             home.transform.position = new Vector2(-5f, -2.65f);
             away.transform.position = new Vector2(5f, -2.65f);
+        }
+
+        IEnumerator Gol(){
+            if(scoreLimit != ScoreHome && scoreLimit != ScoreAway){
+                gameIsOn = false;
+                Restart();
+                bola.GetComponent<Rigidbody2D>().gravityScale = 0f;
+                bola.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+                gol.SetActive(true);
+                yield return new WaitForSeconds(3);
+                gol.SetActive(false);
+                gameIsOn = true;
+                bola.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            }
         }
     }
 }
