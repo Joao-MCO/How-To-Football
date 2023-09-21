@@ -326,7 +326,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mandante
+  m_Name: Movimento Argentina
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Speed
@@ -585,7 +585,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 344bea72f775e1144a070b67bb8f220c, type: 2}
+  m_Motion: {fileID: 7400000, guid: d968407b828113244a045120de12fb11, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
