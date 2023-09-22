@@ -12,28 +12,27 @@ namespace HTF{
 
         public float headStrength = 5f;
 
-        public void OnHead(){
-            if(canShoot){
-                _bola.AddForce(headStrength*_direction, ForceMode2D.Impulse);
-            }  
-        }
-
-        private void OnTriggerEnter2D(Collider2D other) {
-            if(other.gameObject.layer == 9){    
-                _bola = other.gameObject.GetComponent<Rigidbody2D>();
-                canShoot = true;
-            }
-        }
-
         private void OnTriggerStay2D(Collider2D other) {
             if(other.gameObject.layer == 9) _direction = -(transform.position - other.gameObject.transform.position).normalized; 
         }
-        
+
+        private void OnTriggerEnter2D(Collider2D other) {
+            if(other.gameObject.layer == 9){  
+                _bola = other.gameObject.GetComponent<Rigidbody2D>();
+            }
+        }
+
         private void OnTriggerExit2D(Collider2D other) {
             if(other.gameObject.layer == 9){  
                 _bola = null; 
-                canShoot = false;
             }
+        }
+
+        private void Update() {
+            if(canShoot && _bola != null){
+                _bola.AddForce(headStrength*_direction, ForceMode2D.Impulse);
+                AudioManager.Instance.Play("Chute"); 
+            } 
         }
     }
 }

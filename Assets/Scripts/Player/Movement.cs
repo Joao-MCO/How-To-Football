@@ -10,7 +10,7 @@ namespace HTF{
         private Animator _animator;
         private float _horizontalMovement;
         public bool _isGrounded = true;
-        private bool canShoot = false;
+        public bool canShoot = false;
         private Rigidbody2D _bola;
         private Vector2 _direction;
         
@@ -30,7 +30,6 @@ namespace HTF{
         [Header("Kicking Properties")]
         [Space]
         [SerializeField] private float kickStrength = 15f;
-        [SerializeField] private Pe pe;
         [SerializeField] private Cabeca cabeca;
 
 
@@ -81,8 +80,9 @@ namespace HTF{
             if (_isGrounded && Input.GetKeyDown(KeyCode.I))
                 JumpPlayer();
 
-            if (_isGrounded && Input.GetKeyDown(KeyCode.U))
+            if (Input.GetKeyDown(KeyCode.U)){
                 Kick();
+            }
 
             if (Input.GetKeyDown(KeyCode.K))
                 Head();
@@ -104,18 +104,16 @@ namespace HTF{
         // Responsável pelo chute do jogador
         private void Kick(){
             _animator.SetTrigger(Kick1);
-            AudioManager.Instance.Play("Chute");
-            if(canShoot){
-                _bola.AddForce(kickStrength*_direction, ForceMode2D.Impulse);
-            }  
-
         }
 
-        private void Update (){     
-            _isGrounded = pe.CheckGround();              
+        private void Update (){              
             _animator.SetBool(IsJumping, !_isGrounded);
             _animator.SetFloat(Speed, Mathf.Abs(_rigidbody.velocity.x));
             if(GameManager.Instance.gameIsOn){
+                if(canShoot && _bola != null){
+                    _bola.AddForce(kickStrength*_direction, ForceMode2D.Impulse);
+                    AudioManager.Instance.Play("Chute"); 
+                } 
                 switch (playerType){
                     case PlayerType.Mandante:
                         Mandante();
@@ -131,14 +129,11 @@ namespace HTF{
 
         private void Head(){
             _animator.SetTrigger(Head1);
-            AudioManager.Instance.Play("Chute");
-            cabeca.OnHead();
         }
 
-        private void OnTriggerEnter2D(Collider2D other) {
-            if(other.gameObject.layer == 9){    
-                _bola = other.gameObject.GetComponent<Rigidbody2D>();
-                canShoot = true;
+        private void OnColliderEnter2D(Collider2D other) {
+            if(other.gameObject.layer == 6){
+                _isGrounded = true;
             }
         }
 
@@ -146,10 +141,21 @@ namespace HTF{
             if(other.gameObject.layer == 9) _direction = -(transform.position - other.gameObject.transform.position).normalized; 
         }
         
+        private void OnColliderExit2D(Collider2D other) {
+            if(other.gameObject.layer == 6){
+                _isGrounded = false;
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) {
+            if(other.gameObject.layer == 9){  
+                _bola = other.gameObject.GetComponent<Rigidbody2D>();
+            }
+        }
+
         private void OnTriggerExit2D(Collider2D other) {
             if(other.gameObject.layer == 9){  
                 _bola = null; 
-                canShoot = false;
             }
         }
     }
