@@ -4,18 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace HTF{
-    public class Botoes : MonoBehaviour
+    public class BotoesManager : MonoBehaviour
     {
         private void Awake (){
             if (Instance == null){
                 Instance = this;
-            }else{
-                Destroy(gameObject, 1f);
-                return;
             }
             DontDestroyOnLoad(gameObject);
         }
-        public static Botoes Instance;
+        public static BotoesManager Instance;
         public void Jogar(){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -28,6 +25,7 @@ namespace HTF{
             UiManager.Instance.pause.SetActive(true);
             Time.timeScale = 0f;
         }
+
 
         public void UnPause(){
             UiManager.Instance.pause.SetActive(false);

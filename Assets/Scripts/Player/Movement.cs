@@ -98,12 +98,13 @@ namespace HTF{
         private void JumpPlayer(){
             _animator.SetTrigger(Jump1);
             _rigidbody.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
-            // PlayJumpSound();
+            AudioManager.Instance.Play("Pulo");
         }
         
         // Responsável pelo chute do jogador
         private void Kick(){
             _animator.SetTrigger(Kick1);
+            AudioManager.Instance.Play("Chute");
             if(canShoot){
                 _bola.AddForce(kickStrength*_direction, ForceMode2D.Impulse);
             }  
@@ -130,6 +131,7 @@ namespace HTF{
 
         private void Head(){
             _animator.SetTrigger(Head1);
+            AudioManager.Instance.Play("Chute");
             cabeca.OnHead();
         }
 

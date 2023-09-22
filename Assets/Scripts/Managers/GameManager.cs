@@ -43,6 +43,7 @@ namespace HTF{
                 return;
             }
             DontDestroyOnLoad(gameObject);
+            AudioManager.Instance.Play("Apito");
         }
 
         public void Score(MatchSide ms){
@@ -56,10 +57,10 @@ namespace HTF{
 
         public void EndGame(String nome){
             gameIsOn = false;     
+            UiManager.Instance.InTheEnd(nome);
             Destroy(bola);
             Destroy(home);
             Destroy(away);
-            UiManager.Instance.InTheEnd(nome);
         }
         private void Update() {
             UiManager.Instance.OnScore();
@@ -67,10 +68,10 @@ namespace HTF{
             if (ScoreHome == scoreLimit) EndGame(homeTeam.teamName);
             if(Input.GetKeyUp(KeyCode.Escape)){
                 if(gameIsOn){
-                    Botoes.Instance.Pause();
+                    BotoesManager.Instance.Pause();
                     gameIsOn = false;
                 }else{
-                    Botoes.Instance.UnPause();
+                    BotoesManager.Instance.UnPause();
                     gameIsOn = true;
                 }
             }
@@ -83,6 +84,7 @@ namespace HTF{
         }
 
         IEnumerator Gol(){
+            AudioManager.Instance.Play("Gol");
             if(scoreLimit != ScoreHome && scoreLimit != ScoreAway){
                 gameIsOn = false;
                 Restart();
@@ -93,6 +95,7 @@ namespace HTF{
                 gol.SetActive(false);
                 gameIsOn = true;
                 bola.GetComponent<Rigidbody2D>().gravityScale = 1f;
+                AudioManager.Instance.Play("Apito");
             }
         }
     }
