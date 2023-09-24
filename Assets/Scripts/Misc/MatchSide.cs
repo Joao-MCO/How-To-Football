@@ -1,7 +1,4 @@
-namespace HTF
+public enum MatchSide
 {
-    public enum MatchSide
-    {
-        Home, Away
-    }
+    Home, Away
 }

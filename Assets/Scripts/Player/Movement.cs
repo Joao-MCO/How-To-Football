@@ -113,6 +113,7 @@ namespace HTF{
                 if(canShoot && _bola != null){
                     _bola.AddForce(kickStrength*_direction, ForceMode2D.Impulse);
                     AudioManager.Instance.Play("Chute"); 
+                    canShoot = false;
                 } 
                 switch (playerType){
                     case PlayerType.Mandante:
@@ -131,17 +132,13 @@ namespace HTF{
             _animator.SetTrigger(Head1);
         }
 
-        private void OnColliderEnter2D(Collider2D other) {
+        private void OnCollisionEnter2D(Collision2D other) {
             if(other.gameObject.layer == 6){
                 _isGrounded = true;
             }
         }
 
-        private void OnTriggerStay2D(Collider2D other) {
-            if(other.gameObject.layer == 9) _direction = -(transform.position - other.gameObject.transform.position).normalized; 
-        }
-        
-        private void OnColliderExit2D(Collider2D other) {
+        private void OnCollisionExit2D(Collision2D other) {
             if(other.gameObject.layer == 6){
                 _isGrounded = false;
             }
@@ -151,6 +148,10 @@ namespace HTF{
             if(other.gameObject.layer == 9){  
                 _bola = other.gameObject.GetComponent<Rigidbody2D>();
             }
+        }
+        
+        private void OnTriggerStay2D(Collider2D other) {
+            if(other.gameObject.layer == 9) _direction = -(transform.position - other.gameObject.transform.position).normalized; 
         }
 
         private void OnTriggerExit2D(Collider2D other) {

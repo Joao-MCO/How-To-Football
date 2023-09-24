@@ -10,5 +10,14 @@ EditorBuildSettings:
     guid: 4197556f6dde15f4da9012cf706d488f
   - enabled: 1
     path: Assets/Scenes/Player x Player.unity
+    guid: ac534e7db57046141934f1654a85f37b
+  - enabled: 1
+    path: Assets/Scenes/Player x Easy.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Player x Med.unity
+    guid: 72ecae2c8c959ba4fbfd95ef7f7f716d
+  - enabled: 1
+    path: Assets/Scenes/Player x Hard.unity
+    guid: 59947c03f36f86247b1ab386cefdab18
   m_configObjects: {}

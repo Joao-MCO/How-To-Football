@@ -279,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205892428}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 11, y: -6.3, z: 0}
+  m_LocalPosition: {x: 11, y: -6, z: 0}
   m_LocalScale: {x: 0.1734375, y: 0.11793313, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2976,7 +2976,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03155756, y: -3.2504044}
+  m_Offset: {x: -0.03155756, y: -3.300968}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2987,7 +2987,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.80244, y: 0.6844275}
+  m_Size: {x: 12.80244, y: 0.5833001}
   m_EdgeRadius: 0
 --- !u!1 &1227881771
 GameObject:
@@ -3095,6 +3095,7 @@ MonoBehaviour:
   awayTeam: {fileID: 11400000, guid: 33aee493f06ec7945bd52167d5d17440, type: 2}
   scoreLimit: 5
   gameIsOn: 1
+  objeto: 
   coolTime: 10
   bola: {fileID: 1406865152}
   home: {fileID: 1897542786}
@@ -3289,6 +3290,7 @@ GameObject:
   - component: {fileID: 1406865155}
   - component: {fileID: 1406865153}
   - component: {fileID: 1406865157}
+  - component: {fileID: 1406865158}
   m_Layer: 9
   m_Name: Bola
   m_TagString: Bola
@@ -3400,6 +3402,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 16.503643
+--- !u!114 &1406865158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406865152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d49810575337c4ebdfbbd09cc5dc2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocity: 10
 --- !u!1 &1409364085
 GameObject:
   m_ObjectHideFlags: 0
@@ -4462,7 +4477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897542786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: -6.3, z: 0}
+  m_LocalPosition: {x: -11, y: -6.57, z: 0}
   m_LocalScale: {x: 0.1734375, y: 0.11793313, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4513,7 +4528,7 @@ MonoBehaviour:
   canShoot: 0
   playerType: 0
   speed: 200
-  jumpStrength: 18
+  jumpStrength: 10
   kickStrength: 3
   cabeca: {fileID: 1368863103}
 --- !u!50 &1897542790
@@ -4531,7 +4546,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: decb304d4da82714594e0629f7142d5e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1

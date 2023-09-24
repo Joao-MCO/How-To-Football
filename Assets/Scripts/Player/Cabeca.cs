@@ -32,6 +32,7 @@ namespace HTF{
             if(canShoot && _bola != null){
                 _bola.AddForce(headStrength*_direction, ForceMode2D.Impulse);
                 AudioManager.Instance.Play("Chute"); 
+                canShoot = false;
             } 
         }
     }

@@ -6,7 +6,11 @@ public class MenuController : MonoBehaviour
 {
     public GameObject instrucoes;
     public GameObject creditos;
+    public GameObject jogar;
 
+    public void Jogar(){
+        jogar.SetActive(true);
+    }
     public void Instrucoes(){
         instrucoes.SetActive(true);
     }
@@ -18,5 +22,6 @@ public class MenuController : MonoBehaviour
     public void Fechar(){
         instrucoes.SetActive(false);
         creditos.SetActive(false);
+        jogar.SetActive(false);
     }
 }
