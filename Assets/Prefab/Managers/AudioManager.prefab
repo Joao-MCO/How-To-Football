@@ -47,13 +47,13 @@ MonoBehaviour:
   sounds:
   - nome: Apito
     clip: {fileID: 8300000, guid: 8e2503527323e184b8a2b3f1816328a1, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - nome: Chute
     clip: {fileID: 8300000, guid: 22de4498a1bb55448acfc4d8bb9dafe4, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -65,19 +65,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - nome: Musica
     clip: {fileID: 8300000, guid: d30531e2412509e4cb38e3710caf6fac, type: 3}
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - nome: Pulo
     clip: {fileID: 8300000, guid: b9ea959e6edd1e64ea3f501be17081f6, type: 3}
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - nome: Torcida
     clip: {fileID: 8300000, guid: fb3a80e4c2c1f404aade8b97a112bbf5, type: 3}
-    volume: 0.5
+    volume: 0.1
     pitch: 1
     loop: 1
     source: {fileID: 0}
