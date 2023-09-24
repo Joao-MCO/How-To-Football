@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour{
 
     [Header("UI Objects")] 
     [Space] 
-    [SerializeField] private GameObject gol;
+    [SerializeField] public GameObject gol;
     
     
     private void Awake (){

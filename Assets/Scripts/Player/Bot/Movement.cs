@@ -91,7 +91,7 @@ namespace HTF_Bot{
             _animator.SetTrigger(Kick1);
         }
 
-        private void Update (){   
+        private void FixedUpdate (){   
             if(GameManager.Instance.gameIsOn){
                 mayLeft = direcoes[0].Verify();  
                 mayRight = !mayLeft;   

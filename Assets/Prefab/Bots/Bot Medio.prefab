@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2209192203389162687, guid: 7191e805a90e4fd4bbc6a73b69824eb8, type: 3}
       propertyPath: m_Size.x
-      value: 100
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2209192203389162687, guid: 7191e805a90e4fd4bbc6a73b69824eb8, type: 3}
       propertyPath: m_Offset.x
-      value: -45
+      value: -70
       objectReference: {fileID: 0}
     - target: {fileID: 2209192204207852290, guid: 7191e805a90e4fd4bbc6a73b69824eb8, type: 3}
       propertyPath: speed
