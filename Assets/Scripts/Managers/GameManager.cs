@@ -28,8 +28,6 @@ public class GameManager : MonoBehaviour{
     [Header("Game Objects")] 
     [Space] 
     [SerializeField] private GameObject bola;
-    [SerializeField] private GameObject home;
-    [SerializeField] private GameObject away;
 
     [Header("UI Objects")] 
     [Space] 
@@ -63,8 +61,6 @@ public class GameManager : MonoBehaviour{
         gameIsOn = false;     
         UiManager.Instance.InTheEnd(nome);
         Destroy(bola);
-        Destroy(home);
-        Destroy(away);
         Destroy(UiManager.Instance);
         Destroy(gameObject, 1f);
         return;
@@ -86,8 +82,6 @@ public class GameManager : MonoBehaviour{
 
     public void Restart(){
         bola.transform.position = new Vector2(0f, 3f);
-        home.transform.position = new Vector2(-5f, -2.65f);
-        away.transform.position = new Vector2(5f, -2.65f);
     }
 
     IEnumerator Gol(){

@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BotoesManager : MonoBehaviour
 {
+    public static BotoesManager Instance;
+    public int escolha1, escolha2;
     private void Awake (){
+        escolha1 = -1;
+        escolha2 = -1;
         if (Instance == null){
             Instance = this;
         }else{
@@ -14,23 +18,25 @@ public class BotoesManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
-    public static BotoesManager Instance;
-    public void PVP(){
+    public void PVP()
+    {
         SceneManager.LoadScene(1);
     }
-
+    /*
     public void Facil(){
-        SceneManager.LoadScene(2);
+        escolha = 3;
     }
 
-    public void Medio(){
-        SceneManager.LoadScene(3);
+    public void Medio()
+    {
+        escolha = 4;
     }
 
-    public void Dificil(){
-        SceneManager.LoadScene(4);
+    public void Dificil()
+    {
+        escolha = 5;
     }
-
+    */
     public void Voltar(){
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
@@ -53,6 +59,25 @@ public class BotoesManager : MonoBehaviour
 
     public void Quit(){
         Application.Quit();
+    }
+
+    public void SelectHome(int index1)
+    {
+        escolha1 = index1;
+        if(escolha1 > -1 && escolha2 > -1)
+            SceneManager.LoadScene(2);
+        Debug.Log(escolha1);
+        Debug.Log(escolha2);
+
+    }
+
+    public void SelectAway(int index2)
+    {
+        escolha2 = index2;
+        if (escolha1 > -1 && escolha2 > -1)
+            SceneManager.LoadScene(2);
+        Debug.Log(escolha1);
+        Debug.Log(escolha2);
     }
 }
 

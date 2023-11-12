@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f67fcf1b4d5ce40bf39a749dabfad2, type: 3}
+  m_Name: Opcoes
+  m_EditorClassIdentifier: 
+  characters:
+  - nome: BRA
+    character: {fileID: 5362952286831606384, guid: 618525148bcfea04dbfb201aeb0aee4a, type: 3}
+  - nome: ARG
+    character: {fileID: 5362952286831606384, guid: 54f539eae2feb3c49bca44b6566f5bbb, type: 3}
+  - nome: BRA
+    character: {fileID: 6852978012339303484, guid: b347cd74de5f8d8409bf2420c5be230f, type: 3}
+  - nome: ARG
+    character: {fileID: 6852978012339303484, guid: 0e80ddb97e7605a48981f24df8aea527, type: 3}

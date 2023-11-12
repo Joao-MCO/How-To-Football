@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEditor.Animations;
 
 namespace HTF{
     public class Movement : MonoBehaviour 
@@ -13,7 +14,7 @@ namespace HTF{
         public bool canShoot = false;
         private Rigidbody2D _bola;
         private Vector2 _direction;
-        
+
         private static readonly int IsJumping = Animator.StringToHash("IsJumping");
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Kick1 = Animator.StringToHash("Kick");
