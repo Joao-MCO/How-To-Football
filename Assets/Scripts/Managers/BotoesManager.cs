@@ -7,6 +7,7 @@ public class BotoesManager : MonoBehaviour
 {
     public static BotoesManager Instance;
     public int escolha1, escolha2;
+
     private void Awake (){
         escolha1 = -1;
         escolha2 = -1;
@@ -61,23 +62,23 @@ public class BotoesManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void SelectHome(int index1)
+    public void Select(int index1, int index2)
     {
-        escolha1 = index1;
-        if(escolha1 > -1 && escolha2 > -1)
-            SceneManager.LoadScene(2);
-        Debug.Log(escolha1);
-        Debug.Log(escolha2);
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            escolha1 = index1;
+        }
 
-    }
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            escolha2 = index2 + 12;
+        }
 
-    public void SelectAway(int index2)
-    {
-        escolha2 = index2;
         if (escolha1 > -1 && escolha2 > -1)
             SceneManager.LoadScene(2);
-        Debug.Log(escolha1);
-        Debug.Log(escolha2);
+        //Debug.Log(escolha1);
+        //Debug.Log(escolha2);
+
     }
 }
 
