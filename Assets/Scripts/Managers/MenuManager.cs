@@ -31,14 +31,28 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && posicao1 < 6)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            posicao1 -= 6;
+            if(posicao1 < 6)
+            {
+                posicao1 += 6;
+            }
+            else
+            {
+                posicao1 -= 6;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && posicao1 > 5)
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            posicao1 += 6;
+            if (posicao1 < 6)
+            {
+                posicao1 += 6;
+            }
+            else
+            {
+                posicao1 -= 6;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.A))
@@ -65,14 +79,28 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.I) && posicao2 < 6)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            posicao2 -= 6;
+            if (posicao2 < 6)
+            {
+                posicao2 += 6;
+            }
+            else
+            {
+                posicao2 -= 6;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && posicao2 > 5)
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            posicao2 += 6;
+            if (posicao2 < 6)
+            {
+                posicao2 += 6;
+            }
+            else
+            {
+                posicao2 -= 6;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.J))

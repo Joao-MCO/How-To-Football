@@ -244,17 +244,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5602196}
   m_CullTransparentMesh: 1
---- !u!114 &106511246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3905960416866830298, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
-  m_PrefabInstance: {fileID: 3905960416904002644}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356b8b92f9a37c24993ff76a9094c8b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &106511247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3905960416866830299, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
@@ -2020,7 +2009,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 106511246}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HTF.Botoes, HTF
         m_MethodName: Pause
         m_Mode: 1
@@ -3691,7 +3680,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 106511246}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Botoes, HTF
         m_MethodName: Voltar
         m_Mode: 1
