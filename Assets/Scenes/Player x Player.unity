@@ -2545,10 +2545,7 @@ MonoBehaviour:
   cooldownPower: 3
   cooldownShow: 12
   poderes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7019793281921999056, guid: 2126df7636e7a7d459cc456f838e9674, type: 3}
   lugares:
   - {fileID: 872794231}
   - {fileID: 856662806}
