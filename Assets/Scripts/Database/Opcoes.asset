@@ -17,71 +17,71 @@ MonoBehaviour:
     character: {fileID: 5153211271839328220, guid: 1b7fb63bb5128474bbbe6079208ddab0, type: 3}
     torcida: {fileID: 0}
   - nome: Corinthians
-    character: {fileID: 5362952286831606384, guid: 3f36aba17c8a61a4d8048941d5d03d18, type: 3}
+    character: {fileID: 5153211271839328220, guid: d32e5e17827503248b62a9b35fac7a4c, type: 3}
     torcida: {fileID: 0}
   - nome: Galo
-    character: {fileID: 5362952286831606384, guid: cb749a74dcf5cfe468276a0f55a7c184, type: 3}
+    character: {fileID: 5153211271839328220, guid: 5a274e51b35f8dc43a3915122d6e5010, type: 3}
     torcida: {fileID: 0}
   - nome: Flamengo
-    character: {fileID: 5362952286831606384, guid: 2e64da133bfae4b48ad4b66994e5d553, type: 3}
+    character: {fileID: 5153211271839328220, guid: 125b94168c90e0e4484cc7c756a2d177, type: 3}
     torcida: {fileID: 0}
   - nome: Fluminense
-    character: {fileID: 5362952286831606384, guid: ea52fac244fd6b640b431966edd85ddf, type: 3}
+    character: {fileID: 5153211271839328220, guid: 842551b68ac5e0d4990b8ad93d85854e, type: 3}
     torcida: {fileID: 0}
   - nome: Cruzeiro
-    character: {fileID: 5362952286831606384, guid: ec03d3c79c877a843adabcf9551c13b7, type: 3}
+    character: {fileID: 5153211271839328220, guid: 2a7ccc8e3d9235d47ada53e23d3db5fb, type: 3}
     torcida: {fileID: 0}
   - nome: Gremio
-    character: {fileID: 5362952286831606384, guid: 618525148bcfea04dbfb201aeb0aee4a, type: 3}
+    character: {fileID: 5153211271839328220, guid: fdb5436a323822248aea1eef561d709b, type: 3}
     torcida: {fileID: 0}
   - nome: Inter
-    character: {fileID: 5362952286831606384, guid: 6327093c33fa75c4098d509fae5efa84, type: 3}
+    character: {fileID: 5153211271839328220, guid: a92a731c548c9a84093398573147f1af, type: 3}
     torcida: {fileID: 0}
   - nome: Palmeiras
-    character: {fileID: 5362952286831606384, guid: c526fd9cae8508e44935d9cbff9c8e25, type: 3}
+    character: {fileID: 5153211271839328220, guid: 69cfd593fbbba5f46b747877c514087c, type: 3}
     torcida: {fileID: 0}
   - nome: Santos
-    character: {fileID: 5362952286831606384, guid: e5b8cbb1c8ec12b4391b70d1ff731416, type: 3}
+    character: {fileID: 5153211271839328220, guid: 9058ecded15f73f44ba70616adee91b4, type: 3}
     torcida: {fileID: 0}
   - nome: SP
-    character: {fileID: 5362952286831606384, guid: c10225339e8d7ef48a21282813ea3c7c, type: 3}
+    character: {fileID: 5153211271839328220, guid: 5c52bcfcd3c507b448b91af51b6ce74e, type: 3}
     torcida: {fileID: 0}
   - nome: Vasco
-    character: {fileID: 5362952286831606384, guid: 43258472bc937fe43b46c6f3722efdea, type: 3}
+    character: {fileID: 5153211271839328220, guid: 0c6685c956fb732459b8e376038202a5, type: 3}
     torcida: {fileID: 0}
   - nome: Botafogo Visitante
-    character: {fileID: 6852978012339303484, guid: 03d71f067a0d7f54cb58e7668393fcef, type: 3}
+    character: {fileID: 5153211271839328220, guid: b724391758af37e4d8c990e13a9258aa, type: 3}
     torcida: {fileID: 0}
   - nome: Corinthians  Visitante
-    character: {fileID: 6852978012339303484, guid: 451b5af5be530fd44a809def4aaf1a47, type: 3}
+    character: {fileID: 5153211271839328220, guid: dee79cec894f0374fbaf3b15e6829c9d, type: 3}
     torcida: {fileID: 0}
   - nome: Galo Visitante
-    character: {fileID: 6852978012339303484, guid: 21c19586ea8959b40903154ef90a35d5, type: 3}
+    character: {fileID: 5153211271839328220, guid: d5051f7e2e3cc254cb0a2470ba4e27eb, type: 3}
     torcida: {fileID: 0}
   - nome: Flamengo Visitante
-    character: {fileID: 6852978012339303484, guid: 10fc5f2d241826849b43546fef4eb92b, type: 3}
+    character: {fileID: 5153211271839328220, guid: 608cc23c762206144a52823cc3264750, type: 3}
     torcida: {fileID: 0}
   - nome: Fluminense Visitante
-    character: {fileID: 6852978012339303484, guid: 2f01c5d413e62384587e29646d5abce2, type: 3}
+    character: {fileID: 5153211271839328220, guid: 421ac37e09362ea4883b878a82654cbb, type: 3}
     torcida: {fileID: 0}
   - nome: Cruzeiro Visitante
-    character: {fileID: 6852978012339303484, guid: 491ee86b34c92e44791f1dc48ebd9274, type: 3}
+    character: {fileID: 5153211271839328220, guid: 1b0593b5d631f534ea7d20ac0887b939, type: 3}
     torcida: {fileID: 0}
   - nome: Gremio Visitante
-    character: {fileID: 6852978012339303484, guid: c8ba8f4b64c5c994fbbd3d74f51a3abf, type: 3}
+    character: {fileID: 5153211271839328220, guid: 94b414b762b22904eade1ef53924de77, type: 3}
     torcida: {fileID: 0}
   - nome: Inter Visitante
-    character: {fileID: 6852978012339303484, guid: 1eb7818e5815f2f4da7e32512c5e7d70, type: 3}
+    character: {fileID: 5153211271839328220, guid: 8bd298e00e1d6354883136d8db7ff81b, type: 3}
     torcida: {fileID: 0}
   - nome: Palmeiras Visitante
-    character: {fileID: 6852978012339303484, guid: e93aa41478ced57478bbb043a389fef9, type: 3}
+    character: {fileID: 5153211271839328220, guid: 2d8e6998dc41511429195954cc4ab2cf, type: 3}
     torcida: {fileID: 0}
   - nome: Santos Visitante
-    character: {fileID: 6852978012339303484, guid: 4e42ae69b9ae3c14eb7c3855d48ac552, type: 3}
+    character: {fileID: 5153211271839328220, guid: f207f8943f2c13c42b63174bb29910a0, type: 3}
     torcida: {fileID: 0}
   - nome: SP Visitante
-    character: {fileID: 6852978012339303484, guid: f78611df42901fa428c0738b041f5036, type: 3}
+    character: {fileID: 5153211271839328220, guid: db46790480acac74489eb8b8ce74c1d5, type: 3}
     torcida: {fileID: 0}
   - nome: Vasco Visitante
-    character: {fileID: 5153211271839328220, guid: b724391758af37e4d8c990e13a9258aa, type: 3}
+    character: {fileID: 5153211271839328220, guid: cfcc2966a8305a842ad1ea035100cafc, type: 3}
     torcida: {fileID: 0}
