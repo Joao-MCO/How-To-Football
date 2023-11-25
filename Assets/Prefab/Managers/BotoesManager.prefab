@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3905960416866830299}
-  - component: {fileID: 3905960416866830298}
+  - component: {fileID: 7254190778494972590}
   m_Layer: 0
   m_Name: BotoesManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3905960416866830298
+--- !u!114 &7254190778494972590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,3 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356b8b92f9a37c24993ff76a9094c8b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  escolha1: 0
+  escolha2: 0
+  posicaoX:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  posicaoY:
+  - 0
+  - 0
