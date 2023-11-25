@@ -18,7 +18,6 @@ namespace HTF{
         private static readonly int IsJumping = Animator.StringToHash("IsJumping");
         private static readonly int Speed = Animator.StringToHash("Speed");
         private static readonly int Kick1 = Animator.StringToHash("Kick");
-        private static readonly int Head1 = Animator.StringToHash("Head");
         private static readonly int Jump1 = Animator.StringToHash("Jump");
 
         [FormerlySerializedAs("type")]
@@ -31,7 +30,6 @@ namespace HTF{
         [Header("Kicking Properties")]
         [Space]
         [SerializeField] private float kickStrength = 15f;
-        [SerializeField] private Cabeca cabeca;
 
 
         // Setando componentes do Objeto
@@ -59,9 +57,6 @@ namespace HTF{
 
             if (Input.GetKeyDown(KeyCode.E))
                 Kick();
-
-            if (Input.GetKeyDown(KeyCode.S))
-                Head();
         }
 
         // Movimentação do Visitante
@@ -84,9 +79,6 @@ namespace HTF{
             if (Input.GetKeyDown(KeyCode.U)){
                 Kick();
             }
-
-            if (Input.GetKeyDown(KeyCode.K))
-                Head();
         }
 
         // Movimenta o jogador
@@ -94,14 +86,15 @@ namespace HTF{
             Vector2 movement = new Vector2((_horizontalMovement * speed * Time.fixedDeltaTime),_rigidbody.velocity.y);
             _rigidbody.velocity = movement;
         }
-        
+
         // Responsável pelo pulo do jogador
-        private void JumpPlayer(){
+        private void JumpPlayer()
+        {
             _animator.SetTrigger(Jump1);
             _rigidbody.AddForce(Vector2.up * jumpStrength, ForceMode2D.Impulse);
             AudioManager.Instance.Play("Pulo");
         }
-        
+
         // Responsável pelo chute do jogador
         private void Kick(){
             _animator.SetTrigger(Kick1);
@@ -127,10 +120,6 @@ namespace HTF{
                         throw new ArgumentOutOfRangeException();
                 }
             }
-        }
-
-        private void Head(){
-            _animator.SetTrigger(Head1);
         }
 
         private void OnCollisionEnter2D(Collision2D other) {

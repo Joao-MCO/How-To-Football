@@ -19,10 +19,19 @@ public class GameManager : MonoBehaviour{
 
     public int ScoreAway { get; private set; } = 0;
 
-    public string objeto;
+    private GameObject player;
 
-    public int coolTime = 3;
+    public int coolTime = 2;
 
+    private float _timeLeftPower, _timeLeftShow;
+    private bool _isPower, _isShowing;
+
+    public int cooldownPower = 3;
+    public int cooldownShow = 12;
+
+    public GameObject[] poderes;
+    public Instantiate[] lugares;
+    private int _indexLugares;
 
     [FormerlySerializedAs("type")]
     [Header("Game Objects")] 
@@ -46,6 +55,10 @@ public class GameManager : MonoBehaviour{
 
     private void Start() {
         AudioManager.Instance.Play("Apito");
+        _timeLeftPower = cooldownPower;
+        _timeLeftShow = cooldownShow;
+        _isShowing = false;
+        _indexLugares = 0;
     }
 
     public void Score(MatchSide ms){
@@ -78,6 +91,30 @@ public class GameManager : MonoBehaviour{
                 gameIsOn = true;
             }
         }
+
+        if(!_isShowing){
+            _timeLeftShow -= Time.deltaTime;
+        }
+
+        if(_timeLeftShow < 0 && !_isShowing){
+            lugares[_indexLugares].Inicia(poderes[0]);
+            _isShowing = true;
+            _indexLugares++;
+            if(_indexLugares > 2) _indexLugares = 0;
+            _timeLeftShow = cooldownShow;
+        }
+
+        if(_isPower){
+            _timeLeftPower -= Time.deltaTime;
+        }
+        if(_timeLeftPower < 0 && _isPower){
+            player.transform.localScale = new Vector3(1f, 1f, 1f);
+            _isPower = false;
+            _timeLeftPower = cooldownPower;
+            player = null;
+            _isShowing = false;
+            return;
+        }
     }
 
     public void Restart(){
@@ -92,11 +129,20 @@ public class GameManager : MonoBehaviour{
             bola.GetComponent<Rigidbody2D>().gravityScale = 0f;
             bola.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
             gol.SetActive(true);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(coolTime);
             gol.SetActive(false);
             gameIsOn = true;
             bola.GetComponent<Rigidbody2D>().gravityScale = 1f;
             AudioManager.Instance.Play("Apito");
         }
+    }
+
+    public void Poder(GameObject player, GameObject power){
+        Destroy(power, 1f);
+        _timeLeftPower = cooldownPower;
+        _isPower = true;
+        this.player = player;
+        player.transform.localScale = new Vector3(2f, 2f, 1f);
+        return;
     }
 }

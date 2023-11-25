@@ -8,6 +8,5 @@ using UnityEngine.UI;
 public class Character
 {
     public string nome;
-    public GameObject character;
-    public Image torcida;
+    public GameObject character, torcida;
 }
