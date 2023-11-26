@@ -8,7 +8,8 @@ public class InitiateAway : Initiate
     void Start()
     {
         Instantiate(cb.characters[BotoesManager.Instance.escolha2].torcida);
-        Instantiate(cb.characters[BotoesManager.Instance.escolha2].character);
+        player = (GameObject) Instantiate(cb.characters[BotoesManager.Instance.escolha2].character);
         player.transform.localScale = new Vector3(player.transform.localScale.x*fator, player.transform.localScale.y*fator, 1f);
+        logo.sprite = cb.characters[BotoesManager.Instance.escolha2].logo.sprite;
     }
 }

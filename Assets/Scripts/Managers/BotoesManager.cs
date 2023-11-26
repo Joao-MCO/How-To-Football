@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BotoesManager : MonoBehaviour
 {
     public static BotoesManager Instance;
-    public int escolha1, escolha2;
+    public int escolha1, escolha2;    
 
     private void Awake (){
         escolha1 = -1;

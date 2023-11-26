@@ -9,4 +9,5 @@ public class Character
 {
     public string nome;
     public GameObject character, torcida;
+    public Image logo;
 }

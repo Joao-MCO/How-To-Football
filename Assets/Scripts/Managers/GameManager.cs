@@ -5,6 +5,7 @@ using System.Threading;
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour{
     public static GameManager Instance;
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour{
     public GameObject[] poderes;
     public Instantiate[] lugares;
     private int _indexLugares;
+
 
     [FormerlySerializedAs("type")]
     [Header("Game Objects")] 
