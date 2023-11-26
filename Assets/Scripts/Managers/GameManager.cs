@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour{
 
     public GameObject wind, estacaHome, estacaAway;
 
+    public GameObject homePlayer, awayPlayer;
 
     [FormerlySerializedAs("type")]
     [Header("Game Objects")] 
@@ -77,6 +78,18 @@ public class GameManager : MonoBehaviour{
         }else{
             ScoreAway += 1;
         }
+        if(_powerIndex == 0 && _isPower) player.transform.localScale = new Vector3(player.transform.localScale.x/2f, player.transform.localScale.y/2f, 1f);
+        _timeLeftPower = 0;
+        _timeLeftShow = cooldownShow;
+        _isShowing = false;
+        _indexLugares = 0;
+        _powerIndex =-1;
+        _lastIndex = -1;
+        _isGiant = false;
+        playerController = 0;
+        estacaHome.SetActive(false);
+        estacaAway.SetActive(false);
+        wind.SetActive(false);
         StartCoroutine(Gol());
     }
 
@@ -149,7 +162,10 @@ public class GameManager : MonoBehaviour{
             gameIsOn = false;
             Restart();
             bola.GetComponent<Rigidbody2D>().gravityScale = 0f;
-            bola.GetComponent<Rigidbody2D>().velocity = new Vector2(0f,0f);
+            bola.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            bola.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+            homePlayer.transform.position = new Vector2(-5f,0f);
+            awayPlayer.transform.position = new Vector2(5f,0f);
             gol.SetActive(true);
             yield return new WaitForSeconds(coolTime);
             gol.SetActive(false);

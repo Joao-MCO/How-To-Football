@@ -268,7 +268,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265516474}
+      - m_Target: {fileID: 169206010}
         m_TargetAssemblyTypeName: BotoesManager, HTF
         m_MethodName: PVP
         m_Mode: 1
@@ -506,6 +506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7254190778494972590, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
+      propertyPath: mc
+      value: 
+      objectReference: {fileID: 632079585}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
 --- !u!4 &169206009 stripped
@@ -513,6 +517,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3905960416866830299, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
   m_PrefabInstance: {fileID: 169206008}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &169206010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7254190778494972590, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
+  m_PrefabInstance: {fileID: 169206008}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 356b8b92f9a37c24993ff76a9094c8b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313244390
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265516474}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BotoesManager, HTF
         m_MethodName: Facil
         m_Mode: 1
@@ -1075,7 +1090,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265516474}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BotoesManager, HTF
         m_MethodName: Dificil
         m_Mode: 1
@@ -1603,17 +1618,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239843098}
   m_CullTransparentMesh: 1
---- !u!114 &1265516474 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3905960416866830298, guid: 755d9eb19b7155d42bdcca1529548a19, type: 3}
-  m_PrefabInstance: {fileID: 169206008}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 356b8b92f9a37c24993ff76a9094c8b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1301197039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,7 +2626,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265516474}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BotoesManager, HTF
         m_MethodName: Medio
         m_Mode: 1
@@ -2755,7 +2759,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1265516474}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HTF.BotoesManager, HTF
         m_MethodName: Quit
         m_Mode: 1

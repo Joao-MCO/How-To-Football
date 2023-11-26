@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEditor.Animations;
 
 namespace HTF{
     public class Movement : MonoBehaviour 

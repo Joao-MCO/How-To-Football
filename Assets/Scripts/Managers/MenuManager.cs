@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour
     public float[] posicaoY;
     public GameObject p1, p2;
     private float x, y;
+    private bool _home, _away;
+    public CharacterDatabase dataChar;
+    public Image iHome, iAway;
 
     void Awake()
     {
@@ -25,13 +28,15 @@ public class MenuManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
-        Debug.Log(p1.transform.position);
-        Debug.Log(p2.transform.position);
+        _home = false;
+        _away = false;
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        _home = BotoesManager.Instance._selectedHome;
+        _away = BotoesManager.Instance._selectedAway;
+        if (Input.GetKeyDown(KeyCode.W) && !_home)
         {
             if(posicao1 < 6)
             {
@@ -43,7 +48,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && !_home)
         {
             if (posicao1 < 6)
             {
@@ -55,7 +60,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && !_home)
         {
             if(posicao1 == 0 || posicao1 == 6)
             {
@@ -67,7 +72,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && !_home)
         {
             if (posicao1 == 5 || posicao1 == 11)
             {
@@ -79,7 +84,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) && !_away)
         {
             if (posicao2 < 6)
             {
@@ -91,7 +96,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && !_away)
         {
             if (posicao2 < 6)
             {
@@ -103,7 +108,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && !_away)
         {
             if (posicao2 == 0 || posicao2 == 6)
             {
@@ -115,7 +120,7 @@ public class MenuManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && !_away)
         {
             if (posicao2 == 5 || posicao2 == 11)
             {
@@ -152,7 +157,8 @@ public class MenuManager : MonoBehaviour
         }
 
         p2.transform.position = new Vector3(x, y, -1);
-
         BotoesManager.Instance.Select(posicao1, posicao2);
+        iHome.sprite = dataChar.characters[posicao1].jogador;
+        iAway.sprite = dataChar.characters[posicao2].jogador;
     }
 }

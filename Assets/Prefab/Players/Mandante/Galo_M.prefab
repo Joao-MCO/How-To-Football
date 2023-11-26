@@ -127,9 +127,9 @@ MonoBehaviour:
   _isGrounded: 1
   canShoot: 0
   playerType: 0
-  speed: 250
+  speed: 275
   jumpStrength: 50
-  kickStrength: 5
+  kickStrength: 5.5
 --- !u!61 &5153211271839328223
 BoxCollider2D:
   m_ObjectHideFlags: 0

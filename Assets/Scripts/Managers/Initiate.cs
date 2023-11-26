@@ -9,4 +9,6 @@ public abstract class Initiate : MonoBehaviour
     public float fator=1f;
     protected GameObject player;
     public Image logo;
+
+    public abstract void Inicio();
 }

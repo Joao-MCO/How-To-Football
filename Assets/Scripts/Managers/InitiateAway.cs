@@ -11,5 +11,14 @@ public class InitiateAway : Initiate
         player = (GameObject) Instantiate(cb.characters[BotoesManager.Instance.escolha2].character);
         player.transform.localScale = new Vector3(player.transform.localScale.x*fator, player.transform.localScale.y*fator, 1f);
         logo.sprite = cb.characters[BotoesManager.Instance.escolha2].logo.sprite;
+        GameManager.Instance.awayPlayer = player;
+    }
+
+    public override void Inicio(){
+        Instantiate(cb.characters[BotoesManager.Instance.escolha2].torcida);
+        player = (GameObject) Instantiate(cb.characters[BotoesManager.Instance.escolha2].character);
+        player.transform.localScale = new Vector3(player.transform.localScale.x*fator, player.transform.localScale.y*fator, 1f);
+        logo.sprite = cb.characters[BotoesManager.Instance.escolha2].logo.sprite;
+        GameManager.Instance.awayPlayer = player;
     }
 }
