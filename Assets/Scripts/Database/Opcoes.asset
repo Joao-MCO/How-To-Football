@@ -74,7 +74,7 @@ MonoBehaviour:
     logo: {fileID: 6479549249635979321, guid: f3686bfe6c196ad4db7fc1e1db346f77, type: 3}
     jogador: {fileID: 21300000, guid: 84c4e03b3df47714bb0cb88ffbe4d5ae, type: 3}
   - nome: Botafogo Visitante
-    character: {fileID: 5153211271839328220, guid: b724391758af37e4d8c990e13a9258aa, type: 3}
+    character: {fileID: 5153211271839328220, guid: c2503de01ad8e07478387491f801ae76, type: 3}
     torcida: {fileID: 3965320359451655972, guid: 1220f87f9ea9d66409610c3797fae570, type: 3}
     logo: {fileID: 6479549249635979321, guid: 40740d5d56d03ba419c64e2fbe5f14af, type: 3}
     jogador: {fileID: 21300000, guid: 076039d85d44af949976b6b625cc3bcd, type: 3}
