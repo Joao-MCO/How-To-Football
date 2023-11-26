@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tele de Abriu.unity
+    guid: 631935441318c7e4cb0608c6eebd1379
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4197556f6dde15f4da9012cf706d488f
   - enabled: 1

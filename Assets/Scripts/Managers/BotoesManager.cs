@@ -35,7 +35,7 @@ public class BotoesManager : MonoBehaviour
         Destroy(mc.config, 1f);
         Destroy(mc,1f);
         Debug.Log("Feito");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     /*
     public void Facil(){
@@ -54,7 +54,7 @@ public class BotoesManager : MonoBehaviour
     */
     public void Voltar(){
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void Pause(){
@@ -80,7 +80,7 @@ public class BotoesManager : MonoBehaviour
     {
         if(_selectedAway && _selectedHome){
             panel.SetActive(true);
-            if (Input.GetKeyUp(KeyCode.U) || Input.GetKeyUp(KeyCode.E)) SceneManager.LoadScene(2);
+            if (Input.GetKeyUp(KeyCode.U) || Input.GetKeyUp(KeyCode.E)) SceneManager.LoadScene(3);
             else if(Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.M)){
                 panel.SetActive(false);
                 _selectedAway = false;

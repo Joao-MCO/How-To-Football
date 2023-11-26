@@ -1098,8 +1098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.3685, y: 0.00026891}
-  m_SizeDelta: {x: 812.7371, y: 449.81}
+  m_AnchoredPosition: {x: -0.00002861, y: -0.016497}
+  m_SizeDelta: {x: 800, y: 449.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731050689
 MonoBehaviour:
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a1fbbb05f1274f546ba3bc12a55ca207, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de0577e0c6444a54c9b3f1fe052155bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2590,7 +2590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -237, y: 20.905645}
+  m_AnchoredPosition: {x: -190, y: -10.2}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796219471
@@ -2667,7 +2667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: -73}
+  m_AnchoredPosition: {x: 229.6, y: -63.9}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827793639
@@ -3094,6 +3094,38 @@ PrefabInstance:
       propertyPath: dataChar
       value: 
       objectReference: {fileID: 11400000, guid: 8dec14c3eb0f79e49a74d4478c7adace, type: 2}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoX.Array.data[0]
+      value: 505
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoX.Array.data[1]
+      value: 687
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoX.Array.data[2]
+      value: 869
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoX.Array.data[3]
+      value: 1051
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoX.Array.data[4]
+      value: 1233
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoX.Array.data[5]
+      value: 1415
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoY.Array.data[0]
+      value: 518
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577806304446952913, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
+      propertyPath: posicaoY.Array.data[1]
+      value: 333
+      objectReference: {fileID: 0}
     - target: {fileID: 4577806304446952914, guid: 8112ca05c5250624db1915895cf54f53, type: 3}
       propertyPath: m_Name
       value: MenuManager
