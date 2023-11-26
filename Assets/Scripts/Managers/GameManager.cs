@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour{
         }
 
         if(_timeLeftShow < 0 && !_isShowing){
+            // Random para escoleher um poder
             lugares[_indexLugares].Inicia(poderes[0]);
             _isShowing = true;
             _indexLugares++;
@@ -108,7 +109,7 @@ public class GameManager : MonoBehaviour{
             _timeLeftPower -= Time.deltaTime;
         }
         if(_timeLeftPower < 0 && _isPower){
-            player.transform.localScale = new Vector3(1f, 1f, 1f);
+            player.transform.localScale = new Vector3(player.transform.localScale.x/2f, player.transform.localScale.y/2f, 1f);
             _isPower = false;
             _timeLeftPower = cooldownPower;
             player = null;
@@ -142,7 +143,8 @@ public class GameManager : MonoBehaviour{
         _timeLeftPower = cooldownPower;
         _isPower = true;
         this.player = player;
-        player.transform.localScale = new Vector3(2f, 2f, 1f);
+        // Verificação de qual poder está ativo
+        player.transform.localScale = new Vector3(player.transform.localScale.x*2f, player.transform.localScale.y*2f, 1f);
         return;
     }
 }
