@@ -6,6 +6,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using HTF;
 
 public class GameManager : MonoBehaviour{
     public static GameManager Instance;
@@ -32,7 +33,9 @@ public class GameManager : MonoBehaviour{
 
     public GameObject[] poderes;
     public Instantiate[] lugares;
-    private int _indexLugares;
+    private int _indexLugares, _powerIndex;
+
+    public GameObject wind, estacaHome, estacaAway;
 
 
     [FormerlySerializedAs("type")]
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour{
         _timeLeftShow = cooldownShow;
         _isShowing = false;
         _indexLugares = 0;
+        _powerIndex =-1;
     }
 
     public void Score(MatchSide ms){
@@ -99,8 +103,8 @@ public class GameManager : MonoBehaviour{
         }
 
         if(_timeLeftShow < 0 && !_isShowing){
-            // Random para escoleher um poder
-            lugares[_indexLugares].Inicia(poderes[0]);
+            _powerIndex = UnityEngine.Random.Range(0, 2);
+            lugares[_indexLugares].Inicia(poderes[_powerIndex]);
             _isShowing = true;
             _indexLugares++;
             if(_indexLugares > 2) _indexLugares = 0;
@@ -111,7 +115,12 @@ public class GameManager : MonoBehaviour{
             _timeLeftPower -= Time.deltaTime;
         }
         if(_timeLeftPower < 0 && _isPower){
-            player.transform.localScale = new Vector3(player.transform.localScale.x/2f, player.transform.localScale.y/2f, 1f);
+            if(_powerIndex == 0) player.transform.localScale = new Vector3(player.transform.localScale.x/2f, player.transform.localScale.y/2f, 1f);
+            else if(_powerIndex == 1){
+                estacaHome.SetActive(false);
+                estacaAway.SetActive(false);
+            }else if(_powerIndex == 2) wind.SetActive(false);
+            
             _isPower = false;
             _timeLeftPower = cooldownPower;
             player = null;
@@ -145,8 +154,20 @@ public class GameManager : MonoBehaviour{
         _timeLeftPower = cooldownPower;
         _isPower = true;
         this.player = player;
-        // Verificação de qual poder está ativo
-        player.transform.localScale = new Vector3(player.transform.localScale.x*2f, player.transform.localScale.y*2f, 1f);
+        if(_powerIndex == 0){
+            player.transform.localScale = new Vector3(player.transform.localScale.x*2f, player.transform.localScale.y*2f, 1f);
+            Debug.Log("Gigante");
+        }
+        else if(_powerIndex == 1){
+            if(player.name.Contains('M')) estacaHome.SetActive(true);
+            else estacaAway.SetActive(true);
+            Debug.Log("Gelo");
+
+        }else if(_powerIndex == 2){
+            wind.SetActive(true);
+            Debug.Log("Vento");
+
+        }
         return;
     }
 }

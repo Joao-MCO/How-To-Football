@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5628895057606936117}
   - component: {fileID: 3541999490283148793}
   m_Layer: 13
-  m_Name: Giant
+  m_Name: Wind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 85a215f23a6dfdf438b90fdc59a5aaf5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a3680f2a51132e4eaf2bc0e67512a51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +135,7 @@ Animator:
   m_GameObject: {fileID: 7019793281921999056}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 621077956393a304694b12f2b3ecfa92, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7306e58bb153e164e93a5e9245f71cba, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -23,7 +23,7 @@ namespace HTF{
         [FormerlySerializedAs("type")]
         [Header("Player Properties")] 
         [Space] 
-        [SerializeField] private PlayerType playerType;
+        [SerializeField] public PlayerType playerType;
         [SerializeField] private float speed = 200f;
         [SerializeField] private float jumpStrength = 10f;
 
