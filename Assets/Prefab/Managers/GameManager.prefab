@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2090859715689509981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090859715689509982}
+  - component: {fileID: 2090859715689509983}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2090859715689509982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090859715689509981}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090859715689509983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090859715689509981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab00563d669914a44a66784fa19a6d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeTeam: {fileID: 11400000, guid: 0363aa22e35968745a60371310d46577, type: 2}
+  awayTeam: {fileID: 11400000, guid: 33aee493f06ec7945bd52167d5d17440, type: 2}
+  scoreLimit: 5
+  gameIsOn: 1
+  coolTime: 3
+  cooldownPower: 5
+  cooldownShow: 6
+  poderes:
+  - {fileID: 7019793281921999056, guid: a9f3daff7b6731e4780138349dae2506, type: 3}
+  - {fileID: 7019793281921999056, guid: 9835078034faf6248bfe05025a1b4972, type: 3}
+  - {fileID: 7019793281921999056, guid: 2126df7636e7a7d459cc456f838e9674, type: 3}
+  lugares:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerController: 0
+  wind: {fileID: 0}
+  estacaHome: {fileID: 0}
+  estacaAway: {fileID: 0}
+  bola: {fileID: 0}
+  gol: {fileID: 0}

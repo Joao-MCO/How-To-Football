@@ -26,14 +26,15 @@ public class GameManager : MonoBehaviour{
     public int coolTime = 2;
 
     private float _timeLeftPower, _timeLeftShow;
-    private bool _isPower, _isShowing;
+    private bool _isPower, _isShowing, _isGiant;
 
     public int cooldownPower = 3;
     public int cooldownShow = 12;
 
     public GameObject[] poderes;
     public Instantiate[] lugares;
-    private int _indexLugares, _powerIndex;
+    private int _indexLugares, _powerIndex, _lastIndex;
+    public int playerController;
 
     public GameObject wind, estacaHome, estacaAway;
 
@@ -65,6 +66,9 @@ public class GameManager : MonoBehaviour{
         _isShowing = false;
         _indexLugares = 0;
         _powerIndex =-1;
+        _lastIndex = -1;
+        _isGiant = false;
+        playerController = 0;
     }
 
     public void Score(MatchSide ms){
@@ -103,7 +107,11 @@ public class GameManager : MonoBehaviour{
         }
 
         if(_timeLeftShow < 0 && !_isShowing){
-            _powerIndex = UnityEngine.Random.Range(0, 2);
+            _powerIndex = UnityEngine.Random.Range(0, 3);
+            while(_lastIndex == _powerIndex || _powerIndex == 3){
+                _powerIndex = UnityEngine.Random.Range(0, 2);
+            }
+            _lastIndex = _powerIndex;
             lugares[_indexLugares].Inicia(poderes[_powerIndex]);
             _isShowing = true;
             _indexLugares++;
@@ -121,10 +129,12 @@ public class GameManager : MonoBehaviour{
                 estacaAway.SetActive(false);
             }else if(_powerIndex == 2) wind.SetActive(false);
             
+            _isGiant = false;
             _isPower = false;
             _timeLeftPower = cooldownPower;
             player = null;
             _isShowing = false;
+            playerController = 0;
             return;
         }
     }
@@ -154,12 +164,15 @@ public class GameManager : MonoBehaviour{
         _timeLeftPower = cooldownPower;
         _isPower = true;
         this.player = player;
-        if(_powerIndex == 0){
+        if(player.name.Contains('M')) playerController = 1;
+        else playerController = -1;
+        if(_powerIndex == 0 && !_isGiant){
             player.transform.localScale = new Vector3(player.transform.localScale.x*2f, player.transform.localScale.y*2f, 1f);
+            _isGiant = true;
             Debug.Log("Gigante");
         }
         else if(_powerIndex == 1){
-            if(player.name.Contains('M')) estacaHome.SetActive(true);
+            if(playerController == 1) estacaHome.SetActive(true);
             else estacaAway.SetActive(true);
             Debug.Log("Gelo");
 
