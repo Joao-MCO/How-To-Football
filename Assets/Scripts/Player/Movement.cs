@@ -125,6 +125,16 @@ namespace HTF{
             if(other.gameObject.layer == 6){
                 _isGrounded = true;
             }
+            if(other.gameObject.layer == 8){
+                Debug.Log("Entrou");
+                if(gameObject.transform.rotation.y == 0){
+                    gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-10f,0f));
+                    other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(10f,0f));
+                }else{
+                    gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(10f,0f));
+                    other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-10f,0f));
+                }
+            }
         }
 
         private void OnCollisionExit2D(Collision2D other) {

@@ -9,6 +9,7 @@ public class Power : MonoBehaviour
     private GameObject _player;
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.layer == 8){  
+            gameObject.SetActive(false);
             _player = other.gameObject;
             GameManager.Instance.Poder(_player, gameObject);
             Destroy(gameObject, 1f);
